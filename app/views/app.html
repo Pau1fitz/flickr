@@ -1,19 +1,20 @@
-<h1>Flickr Public Feed</h1>
+<div>
+    <h1>Flickr Public Feed</h1>
 
-        <div ng-repeat="user in main.itemHolder">
-            <img ng-src="{{user.media.m}}" alt="Item Photo">
-            <!-- Link below to reference through to the content within the app-->
-            <a ng-href=""><h3>{{user.title}}</h3></a>
+    <div ng-repeat="user in ctrl.itemHolder">
+        <img ng-src="{{user.media.m}}" alt="Item Photo">
+        <!-- Link below to reference through to the content within the app-->
+        <a ng-href=""><h3>{{user.title}}</h3></a>
 
-            <!-- This link brings user to the authors flickr page-->
-            <span><a ng-href="https://www.flickr.com/photos/{{user.author_id}}">{{user.author}}</span></a>
+        <!-- This link brings user to the authors flickr page-->
+        <span><a ng-href="https://www.flickr.com/photos/{{user.author_id}}">{{user.author}}</span></a>
 
-            <!-- Date published-->
-            <span>Published: {{user.published | date:'mediumDate'}}</span>
+        <!-- Date published-->
+        <span>Published: {{user.published | date:'mediumDate'}}</span>
 
-            <a ng-href="#/{{user.id}}">Go to users page</a>
+        <a ng-href="#/{{user.id}}">Go to users page</a>
 
-
-            <!-- link to view post on flickr -->
-            <a ng-href="{{user.link}}">view on flickr</a>
-        </div>
+        <!-- link to view post on flickr -->
+        <a ng-href="{{user.link}}">view on flickr</a>
+    </div>
+</div>

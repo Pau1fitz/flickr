@@ -4,11 +4,11 @@ app.config(function($routeProvider) {
         $routeProvider. 
            when('/', {
              templateUrl: 'app/views/app.html',
-             controller: 'potatoCtrl as main'
+             controller: 'potatoCtrl as ctrl'
            }).
            when('/:id', {
-             template: '<p>Reaching here</p>',
-             controller: 'potatoCtrl as main'
+             templateUrl: 'app/views/user.html',
+             controller: 'potatoCtrl as ctrl'
            }).
            otherwise({
              redirectTo: '/'
@@ -23,10 +23,10 @@ app.factory('getFlickrData',function($http){
     }
 });
 
-app.controller('potatoCtrl', function ($http, getFlickrData, $scope) {
+app.controller('potatoCtrl', function ($http, getFlickrData, $routeParams) {
     var potatoCtrl = this;
     this.itemHolder = [];
-    this.name="p"
+    this.currentId = $routeParams.id;
 
     // call to get the data from Flickr
     getFlickrData.getData()
