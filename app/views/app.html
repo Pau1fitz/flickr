@@ -11,6 +11,8 @@
             <!-- Date published-->
             <span>Published: {{user.published | date:'mediumDate'}}</span>
 
+            <a ng-href="#/{{user.id}}">Go to users page</a>
+
 
             <!-- link to view post on flickr -->
             <a ng-href="{{user.link}}">view on flickr</a>
