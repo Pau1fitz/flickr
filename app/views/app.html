@@ -1,27 +1,28 @@
-    <h1>Flickr Public Feed</h1>
- 
-    <div ng-repeat="user in ctrl.posts">
-        <!-- Link below to reference through to the content within the app-->
+<div class="container">
+   
+    <div class="row">
+    
+        <div class="user-posts" ng-repeat="user in ctrl.posts">
+            <!-- Link below to reference through to the content within the app-->
+            <div class="post-image">  
+                <a ng-href="#/{{user.id}}"><img ng-src="{{user.media.m}}" alt="Item Photo"></a>
+            </div>
 
-        <div class="post-image">  
-            <a ng-href="#/{{user.id}}"><img ng-src="{{user.media.m}}" alt="Item Photo"></a>
+            <div class="post-details">
+                <h3 class="post-title"><a ng-href="#/{{user.id}}">{{user.title | truncate}}</a></h3>
+                <!-- This link brings user to the authors flickr page-->
+                <p class="post-author"><a ng-href="https://www.flickr.com/photos/{{user.author_id}}">{{user.author | regex}}</a></p>
+
+                <!-- Date published-->
+                <p class="post-date">Published: {{user.published | date:'mediumDate'}}</p>
+
+                <!-- link to view post on flickr -->
+                <p class="flickr-link"><a ng-href="{{user.link}}">view on flickr</a></p>
+            </div>
         </div>
-
-        <div class="post-details">
-            <h3 class="post-title"><a ng-href="">{{user.title}}</a></h3>
-            <!-- This link brings user to the authors flickr page-->
-            <p class="post-author"><a ng-href="https://www.flickr.com/photos/{{user.author_id}}">{{user.author | regex}}</a></p>
-
-            <!-- Date published-->
-            <p class="post-date">Published: {{user.published | date:'mediumDate'}}</p>
-
-            <p class="user-page"><a ng-href="#/{{user.id}}">Go to users page</a></p>
-
-            <!-- link to view post on flickr -->
-            <p class="flickr-link"><a ng-href="{{user.link}}">view on flickr</a></p>
-        </div>
-
     </div>
+
+</div>
 
 
 

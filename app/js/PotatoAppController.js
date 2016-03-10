@@ -1,4 +1,4 @@
-app.controller('potatoCtrl', function (getFlickrData, $routeParams, regexFilter, $window) {
+app.controller('potatoCtrl', function (getFlickrData, $routeParams, regexFilter, truncateFilter, $window) {
     var potatoCtrl = this;
     this.posts = [];
     this.currentId = $routeParams.id;
@@ -8,6 +8,8 @@ app.controller('potatoCtrl', function (getFlickrData, $routeParams, regexFilter,
     getFlickrData.getData();
 
     $window.gapi.plusone.go("content");
+
+
 
 
     //need to use this function as the
@@ -23,6 +25,7 @@ app.controller('potatoCtrl', function (getFlickrData, $routeParams, regexFilter,
 
         console.log(potatoCtrl.posts)
     } 
+
 });
 
 
