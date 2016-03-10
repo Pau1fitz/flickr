@@ -6,17 +6,38 @@
     <link rel="stylesheet" href="../app/css/style.css">
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-route/angular-route.js"></script>
-    <script src="../app/js/controller.js"></script>
+
+
+    <script src="../app/js/app.module.js"></script>
+    <script src="../app/js/app.config.js"></script>
+    <script src="../app/js/app.filter.js"></script>
+    <script src="../app/js/PotatoAppController.js"></script>
+    <script src="../app/js/factory.js"></script>
+
+    <!-- Google+1 button -->
+    <script src="https://apis.google.com/js/platform.js"></script>
+  
+
 </head>
 
 <body ng-app="potatoApp">
 
+    <div id="app-page">
+            <div class="nav">
+                <img class="logo" src="https://p.ota.to/static/img/logo.svg">
+            </div>
 
-    <div ng-view></div>
+            <div class="home-page">
 
 
 
-       
+                <div ng-view></div>
+
+            </div>      
+
+    </div>
+
+
 
 
 <!-- This is used for the gruntfile  -->

@@ -80,53 +80,16 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Text Overflow
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-@mixin text-truncate {
-    overflow        : hidden;
-    text-overflow   : ellipsis;
-    white-space     : nowrap;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 // Border Radius
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @mixin border-radius($radius) {
-    -webkit-border-radius               : unit($radius);
-    -moz-border-radius                  : unit($radius);
-    -ms-border-radius                   : unit($radius);
-    border-radius                       : unit($radius);
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
 }
 
-@mixin border-top-radius($topradius) {
-    -webkit-border-top-right-radius     : unit($topradius);
-    border-top-right-radius             : unit($topradius);
-    -webkit-border-top-left-radius      : unit($topradius);
-    border-top-left-radius              : unit($topradius);
-}
-
-@mixin border-right-radius($rightradius) {
-    -webkit-border-bottom-right-radius  : unit($rightradius);
-    border-bottom-right-radius          : unit($rightradius);
-    -webkit-border-top-right-radius     : unit($rightradius);
-    border-top-right-radius             : unit($rightradius);
-}
-
-@mixin border-bottom-radius($bottomradius) {
-    -webkit-border-bottom-right-radius  : unit($bottomradius);
-    border-bottom-right-radius          : unit($bottomradius);
-    -webkit-border-bottom-left-radius   : unit($bottomradius);
-    border-bottom-left-radius           : unit($bottomradius);
-}
-
-@mixin border-left-radius($leftradius) {
-    -webkit-border-bottom-left-radius   : unit($leftradius);
-    border-bottom-left-radius           : unit($leftradius);
-    -webkit-border-top-left-radius      : unit($leftradius);
-    border-top-left-radius              : unit($leftradius);
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Opacity

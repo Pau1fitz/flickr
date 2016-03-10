@@ -68,7 +68,12 @@ module.exports = function (grunt) {
       css: {
         files: 'style.scss',
         tasks: ['sass', 'cssmin']
-      }
+      },html: {
+            files: ['app/views/**/*.html'],
+            options: {
+                livereload: true
+            }
+        }
     } // end watch
   });
 

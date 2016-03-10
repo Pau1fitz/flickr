@@ -3,3 +3,5 @@
 <!-- EXPLAIN WHY I USED RESOURCE -->
 <!-- EXPLAIN WHY I USED THIS INSTEAD OF SCOPE -->
 <!-- EXPLAIN WHY I DEFINED THE I VARIABLE BEFORE THE LOOP -->
+<!-- JOHN PAPA http://www.johnpapa.net/angular-app-structuring-guidelines/ -->
+<!-- ALT TAG FOR ACCESSIBILITY AND SEO -->

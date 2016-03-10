@@ -1,6 +1,5 @@
 // Style description    : Main SASS file
 // Style author         : Paul Fitzgerald
-// Created date         : 08.03.2016
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Imports the style
@@ -12,7 +11,80 @@
 // Style
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-h1{
-    font-size: 18px;
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, img, ol, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
 }
 
+body{
+    background-color: $base-bg;
+}
+
+#app-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: $family-1;
+    background-color: $color-light;
+
+    @include media(screen, max, 480px) {
+        margin-top: px(50);
+        margin-bottom: px(50);
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .home-page {
+
+        h1{
+            font-size: $size-3;
+            font-weight: 400;
+            color: $base-color;  
+        }
+
+        p{
+            font-size: $size-2;
+            font-weight: 400;
+            color: $base-color-2;
+        }
+
+        .post-image {
+            display: inline-block;
+
+            img {
+                width: 100%;
+                width: px(200);
+                height: px(200);
+                @include border-radius(100px);
+            }
+        }
+        
+
+        .post-details {
+            display: inline-block;
+
+            .post-author,
+            .post-date,
+            .user-page,
+            .post-date,
+            .flickr-link {
+                display: inline-block;
+            }
+
+        }
+    }
+}
