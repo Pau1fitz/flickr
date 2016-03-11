@@ -1,26 +1,30 @@
 <div class="container">
-   
-    <div class="row">
     
         <div class="user-posts" ng-repeat="user in ctrl.posts">
+            <div class="row">
             <!-- Link below to reference through to the content within the app-->
-            <div class="post-image">  
-                <a ng-href="#/{{user.id}}"><img ng-src="{{user.media.m}}" alt="Item Photo"></a>
-            </div>
+                <div class="col-sm-3 col-xs-12">
+                    <div class="post-image">  
+                        <a ng-href="#/{{user.id}}"><img ng-src="{{user.media.m}}" alt="Item Photo"></a>
+                    </div>
+                </div>
 
-            <div class="post-details">
-                <h3 class="post-title"><a ng-href="#/{{user.id}}">{{user.title | truncate}}</a></h3>
-                <!-- This link brings user to the authors flickr page-->
-                <p class="post-author"><a ng-href="https://www.flickr.com/photos/{{user.author_id}}">{{user.author | regex}}</a></p>
+                <div class="col-sm-9 col-xs-12">
+                    <div class="post-details">
+                        <h3 class="post-title"><a ng-href="#/{{user.id}}">{{user.title | truncate}}</a></h3>
+                        <hr>
+                        <!-- This link brings user to the authors flickr page-->
+                        <p class="post-author"><a ng-href="https://www.flickr.com/photos/{{user.author_id}}">{{user.author | regex}}</a></p>
 
-                <!-- Date published-->
-                <p class="post-date">Published: {{user.published | date:'mediumDate'}}</p>
+                        <!-- Date published-->
+                        <p class="post-date">Published: {{user.published | date:'mediumDate'}}</p>
 
-                <!-- link to view post on flickr -->
-                <p class="flickr-link"><a ng-href="{{user.link}}">view on flickr</a></p>
+                        <!-- link to view post on flickr -->
+                        <p class="flickr-link"><a ng-href="{{user.link}}">view on flickr</a></p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
 </div>
 

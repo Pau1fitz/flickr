@@ -28,43 +28,45 @@ ol, ul {
     list-style: none;
 }
 
+
+
+body {
+  font-size: $size-1;
+  background: $color-light;
+  color: $color-dark;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400; 
+}
+
+
 #app-page {
-    font-family: $family-1;
     background-color: $color-light;
 
-    @include media(screen, max, 480px) {
-        margin-top: px(50);
-        margin-bottom: px(50);
+     .container {
+        max-width: 800px;
     }
 
     .nav{
-    max-width: 100%;
-
-    background-color: $base-bg;
-
-        .container {
-            max-width: 1170px;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-            @include cf();
-        }
-
+    
+        display: block;
+        background-color: $base-bg; 
        
 
         h1{
             font-size: $size-3;
+            font-family: $family-1;
             font-weight: 400;
             color: $base-color;
             padding-top: px(20);
+            margin: 0;
         }
 
-        .logo img {
-            width: 70px;
-            height: 70px;
+        .logo {
+            background: url("https://p.ota.to/static/img/logo.svg") no-repeat;
+            display: block;
+            width: 100%;
+            height: 70px; 
         }
-
         
     }
 
@@ -74,41 +76,46 @@ ol, ul {
         margin: 0 auto;
 
         h3 {
-            color: $base-color-2;
+            color: $color-dark;
         }
 
         p{
-            font-size: $size-2;
+            font-size: $size-1;
             font-weight: 400;
-            color: $base-color-2;
+            color: $color-dark;
+            line-height: 1.5;
         }
 
         a {
-            color: $base-color-2;
+            color: $color-dark;
+        }
+
+        hr {
+            margin-top: px(-20);
+            margin-bottom: px(40);
         }
 
         .user-posts {
             padding: px(30) 0;
+            border-bottom: 1px solid #eee;
         }
 
-
-
         .post-image {
-            display: inline-block;
-            width: 25%;
 
             img {
                 width: 100%;
-                width: px(200);
-                height: px(200);
-                @include border-radius(100px);
+                height: px(165);
+                @include border-radius(15px);
+            }
+
+            @include media(screen, max, 1318px) {
+                height: px(135);
             }
         }
         
 
         .post-details {
-            float: right;
-            width: 75%;
+            overflow: hidden;
 
             .post-author,
             .post-date,
@@ -120,7 +127,7 @@ ol, ul {
             }
 
             .post-title { 
-                margin: px(50) px(0);
+                margin: px(35) px(0);
                 font-size: $size-3;
             }
 

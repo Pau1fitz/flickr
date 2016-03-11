@@ -8,15 +8,8 @@ app.filter('regex', function() {
 
 app.filter('truncate', function () {
     return function (text, end) {
-        var length = 50,
+        var length = 35,
             end = "...";
-
-        if (text.length <= length || text.length - end.length <= length) {
-            return text;
-        }
-        else {
             return String(text).substring(0, length-end.length) + end;
-        }
-
     };
 });
