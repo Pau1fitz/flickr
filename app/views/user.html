@@ -1,18 +1,34 @@
+<div class="container">
 
-    <h1>Flickr Public Feed</h1>
-    <h3><a ng-href="{{ctrl.itemHolder[ctrl.currentId].link}}">{{ctrl.posts[ctrl.currentId].title}}</a></h3>
-    <h6>{{ctrl.posts[ctrl.currentId].author}}</h6>
+       
+    <div class="row">
+        <div class="col-sm-12">
+            <h3><a ng-href="{{ctrl.posts[ctrl.currentId].link}}">{{ctrl.posts[ctrl.currentId].title}}</a></h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <p>{{ctrl.posts[ctrl.currentId].author | regex}}</p>
+        </div>
+
+        <div class="col-sm-8">
+            <!-- Date published-->
+            <p>Published: {{ctrl.posts[ctrl.currentId].published | date:'mediumDate'}}</p>
+        </div>
+    </div>
+
+
     <img ng-src="{{ctrl.posts[ctrl.currentId].media.m}}">
-    <!-- Date published-->
-    <p>Published: {{ctrl.posts[ctrl.currentId].published | date:'mediumDate'}}</p>
     <a href="#/">Go back</a>
 
 
 <!-- Place this tag where you want the +1 button to render. -->
-
-<div id="content">
+    <div id="content">
       <div class="g-plusone" data-annotation="inline" data-width="300"></div>
     </div>
+
+</div>
   
 
 

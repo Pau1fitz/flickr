@@ -1,4 +1,10 @@
 <div class="container">
+
+        <img src="../app/images/spinner.gif" ng-show="ctrl.loading" />
+
+        <!-- <div ng-show="ctrl.error" class="error">
+            <p>Sorry but there has been an error with loading content. Please try again soon.</p>
+        </div> -->
     
         <div class="user-posts" ng-repeat="user in ctrl.posts">
             <div class="row">

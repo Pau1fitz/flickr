@@ -1,3 +1,4 @@
+//regex filter for getting username
 app.filter('regex', function() {
     return function(val){
      var regExp = /\(([^)]+)\)/;
@@ -6,10 +7,12 @@ app.filter('regex', function() {
    };
 })
 
+//regex filter for truncating message
 app.filter('truncate', function () {
     return function (text, end) {
         var length = 35,
             end = "...";
-            return String(text).substring(0, length-end.length) + end;
+            
+        return String(text).substring(0, length-end.length) + end;
     };
 });

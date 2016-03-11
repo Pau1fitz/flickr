@@ -1,3 +1,4 @@
+//configure the roues for the app
 app.config(function($routeProvider) {
     $routeProvider. 
        when('/', {
