@@ -2,11 +2,11 @@
 app.config(function($routeProvider) {
     $routeProvider. 
        when('/', {
-         templateUrl: 'app/views/app.html',
+         templateUrl: 'app/views/home.html',
          controller: 'potatoCtrl as ctrl'
        }).
        when('/:id', {
-         templateUrl: 'app/views/user.html',
+         templateUrl: 'app/views/post.html',
          controller: 'potatoCtrl as ctrl'
        }).
        otherwise({

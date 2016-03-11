@@ -1,4 +1,5 @@
-<div class="container">
+<div class="home-page">
+    <div class="container">
 
         <img src="../app/images/spinner.gif" ng-show="ctrl.loading" />
 
@@ -11,13 +12,13 @@
             <!-- Link below to reference through to the content within the app-->
                 <div class="col-sm-3 col-xs-12">
                     <div class="post-image">  
-                        <a ng-href="#/{{user.id}}"><img ng-src="{{user.media.m}}" alt="Item Photo"></a>
+                        <a ng-href="#/{{($index)}}"><img ng-src="{{user.media.m}}" alt="Item Photo"></a>
                     </div>
                 </div>
 
                 <div class="col-sm-9 col-xs-12">
                     <div class="post-details">
-                        <h3 class="post-title"><a ng-href="#/{{user.id}}">{{user.title | truncate}}</a></h3>
+                        <h3 class="post-title"><a ng-href="#/{{($index)}}">{{user.title | truncate}}</a></h3>
                         <hr>
                         <!-- This link brings user to the authors flickr page-->
                         <p class="post-author"><a ng-href="https://www.flickr.com/photos/{{user.author_id}}">{{user.author | regex}}</a></p>
@@ -31,7 +32,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
 </div>
 
 

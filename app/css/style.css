@@ -20,8 +20,8 @@ ol, ul {
 body {
   font-size: 14px;
   background: #fff;
-  color: #555;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #000;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 
@@ -30,16 +30,18 @@ body {
 }
 #app-page .container {
   max-width: 800px;
+  margin: 0 auto;
 }
 #app-page .nav {
   display: block;
   background-color: #efeae2;
+  padding: 8px 0;
 }
 #app-page .nav h1 {
   font-size: 26px;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  color: #929290;
+  color: #000;
   padding-top: 20px;
   margin: 0;
 }
@@ -49,42 +51,38 @@ body {
   width: 100%;
   height: 70px;
 }
-#app-page .home-page {
-  max-width: 1170px;
-  margin: 0 auto;
-}
 #app-page .home-page h3 {
-  color: #555;
+  color: #000;
+  font-size: 18px;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
 #app-page .home-page p {
   font-size: 14px;
   font-weight: 400;
-  color: #555;
+  color: #000;
   line-height: 1.5;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
 #app-page .home-page a {
-  color: #555;
+  color: #000;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
 #app-page .home-page hr {
   margin-top: -20px;
   margin-bottom: 40px;
 }
 #app-page .home-page .user-posts {
-  padding: 30px 0;
+  margin-top: 10px;
+  padding: 25px 0;
   border-bottom: 1px solid #eee;
 }
 #app-page .home-page .post-image img {
   width: 100%;
   height: 165px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  border-radius: 15px;
-}
-@media screen and (max-width: 1318px) {
-  #app-page .home-page .post-image {
-    height: 135px;
-  }
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
 }
 #app-page .home-page .post-details {
   overflow: hidden;
@@ -99,10 +97,87 @@ body {
 }
 #app-page .home-page .post-details .post-title {
   margin: 35px 0px;
-  font-size: 26px;
 }
 #app-page .home-page .post-details .post-title a {
   text-decoration: none;
+}
+#app-page .post-page h3 {
+  color: #000;
+  font-size: 18px;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+#app-page .post-page p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.5;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+#app-page .post-page a {
+  color: #000;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+#app-page .post-page .back-arrow {
+  margin-top: 15px;
+}
+#app-page .post-page .author {
+  border-right: 1px solid #eee;
+}
+@media screen and (max-width: 580px) {
+  #app-page .post-page .author {
+    border-right: none;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 580px) {
+  #app-page .post-page .date {
+    text-align: center;
+  }
+}
+#app-page .post-page .head {
+  margin-top: 10px;
+}
+@media screen and (max-width: 580px) {
+  #app-page .post-page .head {
+    text-align: center;
+  }
+}
+#app-page .post-page .sub-head {
+  margin-top: 25px;
+}
+#app-page .post-page .main {
+  margin-top: 25px;
+}
+#app-page .post-page .main .post {
+  margin-top: 15px;
+}
+@media screen and (max-width: 580px) {
+  #app-page .post-page .main .post {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 580px) {
+  #app-page .post-page .main .post-image {
+    width: 100%;
+    text-align: center;
+  }
+}
+#app-page .post-page .main .post-image img {
+  width: 100%;
+  height: 230px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+@media screen and (max-width: 580px) {
+  #app-page .post-page .main .post-image img {
+    width: 50%;
+  }
+}
+#app-page .post-page .g-plusone {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

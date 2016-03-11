@@ -34,7 +34,7 @@ body {
   font-size: $size-1;
   background: $color-light;
   color: $color-dark;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: $family-1;
   font-weight: 400; 
 }
 
@@ -44,19 +44,20 @@ body {
 
      .container {
         max-width: 800px;
+        margin: 0 auto;
     }
 
     .nav{
     
         display: block;
         background-color: $base-bg; 
-       
+        padding: px(8) 0;
 
         h1{
             font-size: $size-3;
             font-family: $family-1;
             font-weight: 400;
-            color: $base-color;
+            color: $color-dark;
             padding-top: px(20);
             margin: 0;
         }
@@ -72,11 +73,10 @@ body {
 
     .home-page {
 
-        max-width: 1170px;
-        margin: 0 auto;
-
         h3 {
             color: $color-dark;
+            font-size: $size-2;
+            font-family: $family-1;
         }
 
         p{
@@ -84,10 +84,12 @@ body {
             font-weight: 400;
             color: $color-dark;
             line-height: 1.5;
+            font-family: $family-1;
         }
 
         a {
             color: $color-dark;
+            font-family: $family-1;
         }
 
         hr {
@@ -96,7 +98,8 @@ body {
         }
 
         .user-posts {
-            padding: px(30) 0;
+            margin-top: px(10);
+            padding: px(25) 0;
             border-bottom: 1px solid #eee;
         }
 
@@ -105,11 +108,7 @@ body {
             img {
                 width: 100%;
                 height: px(165);
-                @include border-radius(15px);
-            }
-
-            @include media(screen, max, 1318px) {
-                height: px(135);
+                @include border-radius(50%);
             }
         }
         
@@ -128,7 +127,6 @@ body {
 
             .post-title { 
                 margin: px(35) px(0);
-                font-size: $size-3;
             }
 
             .post-title a {
@@ -136,5 +134,95 @@ body {
             }
 
         }
+    }
+
+    .post-page {
+
+        h3 {
+            color: $color-dark;
+            font-size: $size-2;
+            font-family: $family-1;
+        }
+
+        p{
+            font-size: $size-1;
+            font-weight: 400;
+            color: $color-dark;
+            line-height: 1.5;
+            font-family: $family-1;
+        }
+
+        a {
+            color: $color-dark;
+            font-family: $family-1;
+        }
+
+        .back-arrow {
+            margin-top: px(15);
+        }
+
+        .author {
+            border-right: 1px solid #eee;
+
+            @include media(screen, max, 580px) {
+                border-right: none;
+                text-align: center;
+            }
+        }
+
+        .date {
+
+            @include media(screen, max, 580px) {
+                text-align: center;
+            }
+        }
+
+        .head { 
+            margin-top: px(10);
+
+            @include media(screen, max, 580px) {
+                text-align: center;
+            }
+        }
+
+        .sub-head {
+            margin-top: px(25);
+        }
+
+        .main { 
+            margin-top: px(25);
+        
+            .post { 
+                margin-top: px(15);
+
+                @include media(screen, max, 580px) {
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+
+            .post-image {
+
+                @include media(screen, max, 580px) {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                img {
+                    width: 100%;
+                    height: px(230);
+                    @include border-radius(50%);
+
+                    @include media(screen, max, 580px) {
+                        width: 50%;
+                    }   
+                }
+            }
+        }
+
+        .g-plusone { 
+            text-align: center;
+        }
+
     }
 }

@@ -6,3 +6,4 @@
 <!-- JOHN PAPA http://www.johnpapa.net/angular-app-structuring-guidelines/ -->
 <!-- ALT TAG FOR ACCESSIBILITY AND SEO -->
 <!-- add show error -->
+<!-- use of lodash -->
