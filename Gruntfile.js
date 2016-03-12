@@ -57,6 +57,17 @@ module.exports = function (grunt) {
       }
     }, // end connect
 
+    uglify: {
+      options: {
+        mangle: false
+      },
+      my_target: {
+        files: {
+          'app/js/app.min.js': ['app/js/module.js', 'app/js/config.js', 'app/js/factory.js', 'app/js/filter.js', 'app/js/PotatoAppController.js']
+        }
+      }
+    }, // end js minify
+
     watch: { // this is a watcher, to run this in terminal write: grunt watch
       options: {
         dateFormat: function(time) {
@@ -65,10 +76,18 @@ module.exports = function (grunt) {
         },
         livereload: true
       },
+
       css: {
         files: 'style.scss',
         tasks: ['sass', 'cssmin']
-      },html: {
+      },
+
+      jsmin: {
+        files: 'app/js/*.js',
+        tasks: ['uglify']
+      },
+
+      html: {
             files: ['app/views/**/*.html'],
             options: {
                 livereload: true
@@ -80,11 +99,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');    // Load the plugin that provides the "watch" task.
   grunt.loadNpmTasks('grunt-contrib-cssmin');   // Load the plugin that provides the "cssmin" task.
   grunt.loadNpmTasks('grunt-contrib-sass');   // Load the plugin that provides the "sass" task.
+  grunt.loadNpmTasks('grunt-contrib-uglify');   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-livereload'); // Load the plugin that provides the "livereload" task.
   grunt.loadNpmTasks('grunt-contrib-connect');  // Load the plugin that provides the "connect" task.
   grunt.loadNpmTasks('grunt-contrib-clean');    // Load the plugin that provides the "clean" task.
   grunt.loadNpmTasks('grunt-contrib-copy');   // Load the plugin that provides the "copy" task.
 
   grunt.registerTask('default', ['watch']);   // this is the default command, use in terminal 'grunt'
-  grunt.registerTask('dev', ['connect', 'sass', 'cssmin', 'copy:main', 'clean', 'watch']);  // use 'grunt dev' for development
+  grunt.registerTask('dev', ['connect', 'sass', 'cssmin', 'uglify','copy:main', 'clean', 'watch']);  // use 'grunt dev' for development
 };

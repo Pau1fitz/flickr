@@ -50,11 +50,11 @@ body {
     .nav{
     
         display: block;
-        background-color: $base-bg; 
+        background-color: $header-bg; 
         padding: px(8) 0;
 
         h1{
-            font-size: $size-3;
+            font-size: $size-4;
             font-family: $family-1;
             font-weight: 400;
             color: $color-dark;
@@ -75,7 +75,7 @@ body {
 
         h3 {
             color: $color-dark;
-            font-size: $size-2;
+            font-size: $size-3;
             font-family: $family-1;
         }
 
@@ -97,6 +97,11 @@ body {
             margin-bottom: px(40);
         }
 
+        .spinner { 
+            width: 50%;
+            margin-left: 25%;
+        }
+
         .user-posts {
             margin-top: px(10);
             padding: px(25) 0;
@@ -105,16 +110,37 @@ body {
 
         .post-image {
 
+            @include media(screen, max, 580px) {
+                width: 100%;
+                text-align: center;
+            }   
+
             img {
                 width: 100%;
                 height: px(165);
                 @include border-radius(50%);
+
+                @include media(screen, max, 580px) {
+                    width: 50%;
+                }     
             }
+
+             
         }
         
-
         .post-details {
             overflow: hidden;
+
+            @include media(screen, max, 580px) {
+                width: 100%;
+                text-align: center;
+            }  
+
+            hr {
+                @include media(screen, max, 580px) {
+                    display: none;
+                }  
+            }
 
             .post-author,
             .post-date,
@@ -127,12 +153,46 @@ body {
 
             .post-title { 
                 margin: px(35) px(0);
+                
+                @include media(screen, max, 580px) {
+                    width: 100%;
+                    text-align: center;
+                }   
             }
 
             .post-title a {
                 text-decoration: none;
             }
 
+            .post-title:hover,
+            .post-title a:hover {
+                @include opacity(0.6);
+                text-decoration: none;
+            }
+
+            .post-author {
+                font-size: $size-2;
+                font-weight: 800;
+                text-decoration: underline;
+            }
+
+            .post-author:hover,
+            .post-author a:hover {
+                @include opacity(0.6);
+                text-decoration: none;
+            }
+
+            .flickr-link {
+                font-size: $size-1;
+                font-weight: 800;
+                text-decoration: underline;
+            }
+
+            .flickr-link:hover,
+            .flickr-link a:hover {
+                @include opacity(0.6);
+                text-decoration: none;
+            }
         }
     }
 
@@ -140,7 +200,7 @@ body {
 
         h3 {
             color: $color-dark;
-            font-size: $size-2;
+            font-size: $size-3;
             font-family: $family-1;
         }
 
@@ -155,6 +215,11 @@ body {
         a {
             color: $color-dark;
             font-family: $family-1;
+        }
+
+        .spinner { 
+            width: 50%;
+            margin-left: 25%;
         }
 
         .back-arrow {

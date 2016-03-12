@@ -1,96 +1,21 @@
 // Style description    : SASS Mixins
-// Style author         : Paul Fitzgerald
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Check if border-box is required 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////
+Media Queries
+///////////////
 
-@mixin include-border-box {
-    @if $border-box {
-        * {
-            box-sizing          : border-box;
-            -moz-box-sizing     : border-box;
-            -webkit-box-sizing  : border-box;
-        }
-    }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Media Queries
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-@mixin media($media, $feature, $breakinpoint, $breakinpoint-2: 0) {
-    @if $media == false {
+@mixin media($media, $feature, $breakingpoint) {
         @if $feature == max {
-            @media (max-width: $breakinpoint) { @content; }
+            @media #{$media} and (max-width: $breakingpoint) { @content; }
         }
         @else if $feature == min {
-            @media (min-width: $breakinpoint) { @content; }
-        }
-        @else if $feature == min-max {
-            @media (min-width: $breakinpoint) and (max-width: $breakinpoint-2) { @content; }
-        }
-        @else {
-            @content;
-        }
-    } 
-    @else {
-        @if $feature == max {
-            @media #{$media} and (max-width: $breakinpoint) { @content; }
-        }
-        @else if $feature == min {
-            @media #{$media} and (min-width: $breakinpoint) { @content; }
-        }
-        @else if $feature == min-max {
-            @media #{$media} and (min-width: $breakinpoint) and (max-width: $breakinpoint-2) { @content; }
-        }
-        @else {
-            @content;
-        }
-    }
+            @media #{$media} and (min-width: $breakingpoint) { @content; }
+        }  
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Pixel Ratio, Retina/HD Images.
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-@mixin ratio($breakinpoint: 0, $breakinpoint-2: 0) {
-    @if not $breakinpoint == 0 and $breakinpoint-2 == 0 {
-        @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: $breakinpoint-2),
-               only screen and (   -moz-min-device-pixel-ratio: 1.5) and (max-width: $breakinpoint-2),
-               only screen and (     -o-min-device-pixel-ratio: 3/2) and (max-width: $breakinpoint-2),
-               only screen and (        min-device-pixel-ratio: 1.5) and (max-width: $breakinpoint-2),
-               only screen and (                min-resolution: 144dpi) and (min-width: $breakinpoint-2) { @content; }
-    }
-    @else if not $breakinpoint == 0 and not $breakinpoint-2 == 0 {
-        @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2),
-               only screen and (   -moz-min-device-pixel-ratio: 1.5) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2),
-               only screen and (     -o-min-device-pixel-ratio: 3/2) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2),
-               only screen and (        min-device-pixel-ratio: 1.5) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2),
-               only screen and (                min-resolution: 144dpi) and (min-width: $breakinpoint) and (max-width: $breakinpoint-2) { @content; }
-    }
-    @else {
-        @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-               only screen and (   -moz-min-device-pixel-ratio: 1.5),
-               only screen and (     -o-min-device-pixel-ratio: 3/2),
-               only screen and (        min-device-pixel-ratio: 1.5),
-               only screen and (                min-resolution: 144dpi) { @content; }
-    }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Text Overflow
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-@mixin text-truncate {
-    overflow        : hidden;
-    text-overflow   : ellipsis;
-    white-space     : nowrap;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Border Radius
-///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////
+Border Radius
+//////////////
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -99,82 +24,13 @@
           border-radius: $radius;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Opacity
-///////////////////////////////////////////////////////////////////////////////////////////////////
+/////////
+Opacity
+////////
 
 @mixin opacity($opacity) {
-    opacity     : $opacity;
-    $opacity-ie : $opacity * 100;
-    filter      : alpha(opacity=$opacity-ie);
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie);
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Clearfix
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-@mixin cf() {
-    &:before,
-    &:after {
-        content : "";
-        display : block;
-    }
-    &:after {
-        clear   : both;
-    }
-}
-
-@mixin cfbefore() {
-    &:before {
-        content : "";
-        display : block;
-        clear   : both;
-    }
-}
-
-@mixin cfafter() {
-    &:after {
-        content : "";
-        display : block;
-        clear   : both;
-    }
-}
-
-@mixin transition($transition...) {
-    -moz-transition:    $transition;
-    -o-transition:      $transition;
-    -webkit-transition: $transition;
-    transition:         $transition;
-}
-
-
-
-@mixin transition-property($property...) {
-    -moz-transition-property:    $property;
-    -o-transition-property:      $property;
-    -webkit-transition-property: $property;
-    transition-property:         $property;
-}
-
-@mixin transition-duration($duration...) {
-    -moz-transition-property:    $duration;
-    -o-transition-property:      $duration;
-    -webkit-transition-property: $duration;
-    transition-property:         $duration;
-}
-
-@mixin transition-timing-function($timing...) {
-    -moz-transition-timing-function:    $timing;
-    -o-transition-timing-function:      $timing;
-    -webkit-transition-timing-function: $timing;
-    transition-timing-function:         $timing;
-}
-
-@mixin transition-delay($delay...) {
-    -moz-transition-delay:    $delay;
-    -o-transition-delay:      $delay;
-    -webkit-transition-delay: $delay;
-    transition-delay:         $delay;
-}
-
 

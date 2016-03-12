@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato-Front End Test</title>
     <link rel="icon" sizes="192x192" href="https://p.ota.to/static/img/logo-192.png">
-    <title></title>
-    <link rel="stylesheet" href="../app/css/style.css">
-
-
+    <!-- CSS AND STYLING -->
+    <link rel="stylesheet" href="../app/css/style.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
+    <!-- ANGULAR FILES & LODASH CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.js"></script>
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-route/angular-route.js"></script>
-
-
-    <script src="../app/js/app.module.js"></script>
-    <script src="../app/js/app.config.js"></script>
-    <script src="../app/js/app.filter.js"></script>
-    <script src="../app/js/PotatoAppController.js"></script>
-    <script src="../app/js/app.dataFactory.js"></script>
-
-    <!-- Google+1 button -->
+    <script src="../app/js/app.min.js"></script>
+    <!-- GOOGLE+1 BUTTON -->
     <script src="https://apis.google.com/js/platform.js"></script>
-
-  
-
 </head>
 
-<body ng-app="potatoApp">
+<body data-ng-app="potatoApp">
+    
+    <noscript>
+        For full functionality of this site it is necessary to enable JavaScript.
+        Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+        instructions how to enable JavaScript in your web browser</a>.
+    </noscript>
 
     <div id="app-page">
             <div class="nav">
@@ -46,16 +42,10 @@
                     </div>
                 </div>
             </div>
-
-      
-                <div ng-view></div>
-
+        <!-- ANGULAR VIEWS -->
+        <div data-ng-view></div>
     </div>
-
-
-
-
-<!-- This is used for the gruntfile  -->
+<!-- USED FOR THE GRUNTFILE  -->
 <script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>

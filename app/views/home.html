@@ -1,34 +1,22 @@
 <div class="home-page">
     <div class="container">
-
-        <img src="../app/images/spinner.gif" ng-show="ctrl.loading" />
-
+        <img class="spinner" src="../app/images/spinner.gif" data-ng-show="ctrl.loading" alt="Spinner" />
         <!-- <div ng-show="ctrl.error" class="error">
             <p>Sorry but there has been an error with loading content. Please try again soon.</p>
         </div> -->
-    
-        <div class="user-posts" ng-repeat="user in ctrl.posts">
+        <div class="user-posts" data-ng-repeat="user in ctrl.posts">
             <div class="row">
-            <!-- Link below to reference through to the content within the app-->
-                <div class="col-sm-3 col-xs-12">
-                    <div class="post-image">  
-                        <a ng-href="#/{{($index)}}"><img ng-src="{{user.media.m}}" alt="Item Photo"></a>
-                    </div>
+                <div class="col-xs-3 post-image">
+                        <a ng-href="#/{{($index)}}"><img ng-src="{{user.media.m}}" alt="Post Photo"></a>
                 </div>
-
-                <div class="col-sm-9 col-xs-12">
-                    <div class="post-details">
+                <div class="col-xs-9 post-details">
+             
                         <h3 class="post-title"><a ng-href="#/{{($index)}}">{{user.title | truncate}}</a></h3>
                         <hr>
-                        <!-- This link brings user to the authors flickr page-->
                         <p class="post-author"><a ng-href="https://www.flickr.com/photos/{{user.author_id}}">{{user.author | regex}}</a></p>
-
-                        <!-- Date published-->
-                        <p class="post-date">Published: {{user.published | date:'mediumDate'}}</p>
-
-                        <!-- link to view post on flickr -->
+                        <p class="post-date">Published: {{user.published | date:'d MMM yyyy'}} at {{user.published | date:'h:mm'}}</p>
                         <p class="flickr-link"><a ng-href="{{user.link}}">view on flickr</a></p>
-                    </div>
+        
                 </div>
             </div>
         </div>
