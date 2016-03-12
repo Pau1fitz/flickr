@@ -4,31 +4,28 @@ app.controller('potatoCtrl', ["getFlickrData", "$routeParams", "$window", "regex
     this.currentId = $routeParams.id;
     this.loading = true;
 
-
-    //API requires jsonFlickrFeed callback function
-    jsonFlickrFeed = function(data){
+    //call to get the data from Flickr
+    getFlickrData.getData().success(function (data) {
         var x = data.items.length;
         for(var i = 0; i < x; i++){
             potatoCtrl.posts.push(data.items[i]);
         }
         //lodash function to remove duplicates returned by API
         potatoCtrl.posts = _.uniqBy(potatoCtrl.posts, 'tags'); 
-    } 
-
-    //call to get the data from Flickr
-    getFlickrData.getData().catch(function (err) {
-      // Log error somehow.
-      console.log(err)
-    }).finally(function () {
-      // Hide loading spinner whether our call succeeded or failed.
-      potatoCtrl.loading = false;
-    });
+        potatoCtrl.loading = false;
+   })
+   .error(function (err) {
+     potatoCtrl.loading = false;
+     potatoCtrl.error = true;
+   });
 
     //used for the google+1 button to ensure it is loaded each time
     $window.gapi.plusone.go("content");
-
-    
 }]);
+
+
+
+
 
 
 

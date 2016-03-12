@@ -1,5 +1,5 @@
-// Style description    : Main SASS file
-// Style author         : Paul Fitzgerald
+//Main SASS file
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Imports the style
@@ -28,8 +28,6 @@ ol, ul {
     list-style: none;
 }
 
-
-
 body {
   font-size: $size-1;
   background: $color-light;
@@ -38,10 +36,9 @@ body {
   font-weight: 400; 
 }
 
-
 #app-page {
     background-color: $color-light;
-
+    
      .container {
         max-width: 800px;
         margin: 0 auto;

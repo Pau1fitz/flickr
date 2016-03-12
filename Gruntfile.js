@@ -63,7 +63,7 @@ module.exports = function (grunt) {
       },
       my_target: {
         files: {
-          'app/js/app.min.js': ['app/js/module.js', 'app/js/config.js', 'app/js/factory.js', 'app/js/filter.js', 'app/js/PotatoAppController.js']
+          'app/js/min/app.min.js': ['app/js/module.js', 'app/js/config.js', 'app/js/factory.js', 'app/js/filter.js', 'app/js/PotatoAppController.js']
         }
       }
     }, // end js minify
@@ -106,5 +106,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');   // Load the plugin that provides the "copy" task.
 
   grunt.registerTask('default', ['watch']);   // this is the default command, use in terminal 'grunt'
-  grunt.registerTask('dev', ['connect', 'sass', 'cssmin', 'uglify','copy:main', 'clean', 'watch']);  // use 'grunt dev' for development
+  grunt.registerTask('dev', ['connect', 'sass', 'cssmin', 'uglify', 'copy:main', 'clean', 'watch']);  // use 'grunt dev' for development
 };
