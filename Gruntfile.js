@@ -23,7 +23,7 @@ module.exports = function (grunt) {
           noCache: true
         },
         files: {
-          'app/production/css/style.css': 'style.scss'
+          'app/production/css/style.css': 'app/scss/style.scss'
         }
       }
     }, // end sass
@@ -32,7 +32,7 @@ module.exports = function (grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: 'app/css',
+          cwd: 'app/production/css',
           src: ['*.css', '!*.min.css'],
           dest: 'app/production/css',
           ext: '.min.css'
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
       },
 
       css: {
-        files: 'style.scss',
+        files: 'app/scss/style.scss',
         tasks: ['sass', 'cssmin']
       },
 
@@ -94,8 +94,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-livereload'); // Load the plugin that provides the "livereload" task.
   grunt.loadNpmTasks('grunt-contrib-connect');  // Load the plugin that provides the "connect" task.
   grunt.loadNpmTasks('grunt-contrib-clean');    // Load the plugin that provides the "clean" task.
-  grunt.loadNpmTasks('grunt-contrib-copy');   // Load the plugin that provides the "copy" task.
 
   grunt.registerTask('default', ['watch']);   // this is the default command, use in terminal 'grunt'
-  grunt.registerTask('dev', ['connect', 'sass', 'cssmin', 'uglify', 'copy:main', 'clean', 'watch']);  // use 'grunt dev' for development
+  grunt.registerTask('dev', ['connect', 'sass', 'cssmin', 'uglify', 'clean', 'watch']);  // use 'grunt dev' for development
 };

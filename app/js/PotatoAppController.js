@@ -14,7 +14,7 @@ app.controller('potatoCtrl', ["getFlickrData", "$routeParams", "$window", "regex
         potatoCtrl.posts = _.uniqBy(potatoCtrl.posts, 'tags'); 
         potatoCtrl.loading = false;
    })
-   .error(function (err) {
+   .error(function () {
      potatoCtrl.loading = false;
      potatoCtrl.error = true;
    });

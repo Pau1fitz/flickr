@@ -32,6 +32,11 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
+@media screen and (max-width: 767px) {
+  #app-page .container {
+    padding: 0 45px;
+  }
+}
 #app-page .nav {
   display: block;
   background-color: #efeae2;
@@ -97,6 +102,11 @@ body {
 @media screen and (max-width: 580px) {
   #app-page .home-page .post-image img {
     width: 50%;
+  }
+}
+@media screen and (max-width: 420px) {
+  #app-page .home-page .post-image img {
+    width: 75%;
   }
 }
 #app-page .home-page .post-details {
@@ -240,8 +250,14 @@ body {
     width: 50%;
   }
 }
+@media screen and (max-width: 420px) {
+  #app-page .post-page .main .post-image img {
+    width: 75%;
+  }
+}
 #app-page .post-page .g-plusone {
-  text-align: center;
+  float: left;
+  margin-top: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */
