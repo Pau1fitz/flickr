@@ -1,6 +1,5 @@
 //Main SASS file
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Imports the style
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,6 +23,7 @@ a, img, ol, ul, li {
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
@@ -38,14 +38,12 @@ body {
 
 #app-page {
     background-color: $color-light;
-    
      .container {
         max-width: 800px;
         margin: 0 auto;
     }
 
-    .nav{
-    
+    .nav{    
         display: block;
         background-color: $header-bg; 
         padding: px(8) 0;

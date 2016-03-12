@@ -23,19 +23,10 @@ module.exports = function (grunt) {
           noCache: true
         },
         files: {
-          'app/css/style.css': 'style.scss'
+          'app/production/css/style.css': 'style.scss'
         }
       }
     }, // end sass
-
-    copy: {
-      main: {
-        expand: true,
-        cwd: 'app/js',
-        src: '**',
-        dest: 'app/js'
-      }
-    }, //end copy
 
     cssmin: {
       target: {
@@ -43,7 +34,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'app/css',
           src: ['*.css', '!*.min.css'],
-          dest: 'app/css',
+          dest: 'app/production/css',
           ext: '.min.css'
         }]
       }
@@ -63,7 +54,7 @@ module.exports = function (grunt) {
       },
       my_target: {
         files: {
-          'app/js/min/app.min.js': ['app/js/module.js', 'app/js/config.js', 'app/js/factory.js', 'app/js/filter.js', 'app/js/PotatoAppController.js']
+          'app/production/js/app.min.js': ['app/js/module.js', 'app/js/config.js', 'app/js/factory.js', 'app/js/filter.js', 'app/js/PotatoAppController.js']
         }
       }
     }, // end js minify
